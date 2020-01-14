@@ -45,23 +45,6 @@ module.exports.run = async(bot, message, args) => {
     warnChannel.send(warnEmbed);
     message.channel.send("Deze gebruiker is succesvol gewarnt!");
 
-    if (warns[user.id].warns == "3"){
-
-        var warnmessage = new discord.RichEmbed()
-        .setDescription("PAS OP " + user)
-        .setColor("#fa9600")
-        .addField("Bericht", "Nog één warn en je krijgt een kick!!!!");
-
-        message.channel.send(warnmessage);
-        
-    }
-    if (warns[user.id].warns == "4"){ 
-
-        message.guild.member(user).ban(reason);
-        message.channel.send(`${user} is verbannen!!`);
-        
-    }
-
 }
 
 module.exports.help = {

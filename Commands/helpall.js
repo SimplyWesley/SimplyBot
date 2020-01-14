@@ -27,7 +27,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("!nick", "Verander de nickname van een gebruiker")
     .addField("!close", "Sluit een ticket kanaal")
     .addField("!warn", "Geef een gebruiker een waarschuwing")
-    .addField("!warns", "Bekijk het aantal waarschuwingen van een gebruiker")
+    // .addField("!warns", "Bekijk het aantal waarschuwingen van een gebruiker")
     .setFooter("©️Nintendo's Mansion")
     .setTimestamp();
 
