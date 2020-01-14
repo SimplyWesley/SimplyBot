@@ -17,6 +17,7 @@ module.exports.run = async(bot, message, args) => {
     if(user.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Je kunt deze gebruiker niet warnen");
 
     var reason = args.join(" ").slice(22);
+    
 
 
     if (!warns[user.id]) warns[user.id] = {
