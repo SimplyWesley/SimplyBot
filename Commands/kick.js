@@ -2,11 +2,13 @@ const discord = require("discord.js");
 
 module.exports.run = async (bot, message, arguments) => {
 
-    var kickUser = message.guild.member(message.mentions.users.first() || message.guild.members(arguments[0]));
+    var kickUser = message.guild.member(message.mentions.users.first() || message.guild.member(arguments[0]));
 
     if (!kickUser) return message.channel.send("Deze speler bestaat niet of is niet op deze server");
 
     var reason = arguments.join(" ").slice(22);
+
+    if(!arguments) return message.channel.send("Gelieve een reden mee te geven")
 
     // 0x00000002 = KICK_USERS
     // 0x00002000 = MANNAGE_MESSAGES
@@ -15,7 +17,7 @@ module.exports.run = async (bot, message, arguments) => {
     if (kickUser.hasPermission(0x00002000)) return message.channel.send("Je kan deze gebruiker niet kicken");
 
     var kickEmbed = new discord.RichEmbed()
-        .setDescription("Latest kick information")
+        .setDescription("**Kick**")
         .setColor("#fa9600")
         .addField("Gekickt door: ", message.author)
         .addField("Gekickte gebruiker: ", kickUser)

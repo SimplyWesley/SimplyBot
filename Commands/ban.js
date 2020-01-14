@@ -2,11 +2,13 @@ const discord = require("discord.js");
 
 module.exports.run = async (bot, message, arguments) => {
 
-    var banUser = message.guild.member(message.mentions.users.first() || message.guild.members(arguments[0]));
+    var banUser = message.guild.member(message.mentions.users.first() || message.guild.member(arguments[0]));
 
     if (!banUser) return message.channel.send("Deze speler bestaat niet of is niet op deze server");
 
     var reason = arguments.join(" ").slice(22);
+
+    if(!arguments) return message.channel.send("Gelieve een reden mee te geven")
 
     // 0x00000004 = BAN_MEMBERS
 
