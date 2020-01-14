@@ -1,21 +1,38 @@
 const discord = require("discord.js");
 
-module.exports.run = async(bot, message, args) => {
-        var reden = args.slice(1).join(" ") || "Geen reden opgegeven"
-        let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        const member = message.guild.member(user);
-        if (!member) return message.channel.send("Gelieve een persoon mee te geven!")
-        if(!message.member.hasPermission("BAN_MEMBERS"))
-        return message.channel.send("Jij kan dit niet doen");
-        message.member.send("**Ban**\n\nDeze gebruiker is succesvol geband uit de Nintendo's Mansion discord met de volgende reden:\n>>> " + reden)
-        member.ban(reden)
-        message.channel.send(user + " is succesvol geband!")
-    }
+module.exports.run = async (bot, message, arguments) => {
 
+    var banUser = message.guild.member(message.mentions.users.first() || message.guild.members(arguments[0]));
 
+    if (!banUser) return message.channel.send("Deze speler bestaat niet of is niet op deze server");
+
+    var reason = arguments.join(" ").slice(22);
+
+    // 0x00000004 = BAN_MEMBERS
+
+    if (!message.member.hasPermission(0x00000004)) return message.channel.send("Jij kan dit niet doen");
+
+    if (banUser.hasPermission(0x00000004)) return message.channel.send("Je kan deze gebruiker niet bannen");
+
+    var banEmbed = new discord.RichEmbed()
+        .setDescription("**Ban**")
+        .setColor("#fa9600")
+        .addField("Geband door: ", message.author)
+        .addField("Gebande gebruiker ", banUser)
+        .addField("Reden: ", reason)
+        .setFooter("©️Nintendo's Mansion")
+        .setTimestamp();
+
+    var banChannel = message.guild.channels.find(c => c.name == "logs");
+    if (!banChannel) return message.channel.send("Kan geen log kanaal vinden");
+
+    message.guild.member(banUser).ban(reason);
+
+    banChannel.send(banEmbed);
+
+    return;
+}
 
 module.exports.help = {
-
     name: "ban"
-
 }
