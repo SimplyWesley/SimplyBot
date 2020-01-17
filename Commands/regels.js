@@ -17,7 +17,7 @@ module.exports.run = async(bot, message, args) => {
         .addField("Regel 7:", "Plaats geen persoonlijke gegevens van iemand zonder toestemming.")
         .addField("Regel 8:", "Vraag niet naar beheerdersrollen of andere specifieke rollen.")
         .addField("Regel 9:", "Controleer de regels regelmatig, want de regels kunnen veranderen!")
-        .setFooter("©️Nintendo's Mansion")
+        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
         .setTimestamp();
 
     return message.channel.send(regelsEmbed);

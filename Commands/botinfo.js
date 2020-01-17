@@ -11,7 +11,7 @@ module.exports.run = async(bot, message, args) => {
             .addField("Bot naam", bot.user.username)
             .addField("Gemaakt door", "SimplyWesley")
             .addField("Gemaakt op", bot.user.createdAt)
-            .setFooter("©️Nintendo's Mansion")
+            .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
             .setTimestamp();
 
         return message.channel.send(botEmbed);

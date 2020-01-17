@@ -28,7 +28,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("!close", "Sluit een ticket kanaal")
     .addField("!warn", "Geef een gebruiker een waarschuwing")
     // .addField("!warns", "Bekijk het aantal waarschuwingen van een gebruiker")
-    .setFooter("©️Nintendo's Mansion")
+    .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
     .setTimestamp();
 
     if(!message.member.hasPermission("MANAGE_MESSAGES"))

@@ -32,8 +32,9 @@ module.exports.run = async (bot, message, args) => {
 
     var embedCreateTicket = new discord.RichEmbed()
         .setTitle("Hoi, " + message.author.username)
-        .setFooter("Jouw ticket wordt aangemaakt")
-        .setColor("#fa9600");
+        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
+        .setColor("#fa9600")
+        .setTimestamp();
 
     message.channel.send(embedCreateTicket);
 
@@ -56,7 +57,9 @@ module.exports.run = async (bot, message, args) => {
             var embedParent = new discord.RichEmbed()
                 .setTitle("Hoi, " + message.author.username.toString())
                 .setDescription("Zet hier je vraag/bericht")
-                .setColor("#fa9600");
+                .setColor("#fa9600")
+                .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
+                .setTimestamp();
 
             settedParent.send(embedParent);
         }).catch(err => {

@@ -21,7 +21,7 @@ module.exports.run = async(bot, message, args) => {
         .addField("Aantal Bots",bots )
         .addField(`Laaste gebruiker gejoind:`, `${message.guild.joinedAt.toDateString()}`, true)
         .addField(`:file_folder: Channels:`, `${message.guild.channels.size}`)
-        .setFooter("©️Nintendo's Mansion")
+        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
         .setTimestamp();
 
     return message.channel.send(serverEmbed);

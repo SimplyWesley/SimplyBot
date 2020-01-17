@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, arguments) => {
         .addField("Geband door: ", message.author)
         .addField("Gebande gebruiker ", banUser)
         .addField("Reden: ", reason)
-        .setFooter("©️Nintendo's Mansion")
+        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
         .setTimestamp();
 
     var banChannel = message.guild.channels.find(c => c.name == "logs");

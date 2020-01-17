@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, arguments) => {
         .addField("Gekickt door: ", message.author)
         .addField("Gekickte gebruiker: ", kickUser)
         .addField("Reden: ", reason)
-        .setFooter("©️Nintendo's Mansion")
+        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
         .setTimestamp();
 
         var kickChannel = message.guild.channels.find(c => c.name == "logs");

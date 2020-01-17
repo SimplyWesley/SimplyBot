@@ -37,7 +37,7 @@ module.exports.run = async(bot, message, args) => {
         .addField("Gewarned door", message.author)
         .addField("Aantal warns", warns[user.id].warns)
         .addField("Reden", reason)
-        .setFooter("©️Nintendo's Mansion")
+        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
         .setTimestamp();
 
     var warnChannel = message.guild.channels.find(`name`, "logs");

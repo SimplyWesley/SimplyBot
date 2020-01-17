@@ -32,7 +32,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("!idee", "Maak een idee aan")
     .addField("!ticket", "Maak een ticket aan")
     .addField("!userinfo", "Bekijk info over de opgevraagde gebruiker")
-    .setFooter("©️Nintendo's Mansion")
+    .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
     .setTimestamp();
 
     message.channel.send(helpEmbed);

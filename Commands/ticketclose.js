@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
         .setTitle("Het ticket " + message.channel.name + " is succesvol gesloten")
         .setDescription("Het ticket " + message.channel.name + " is gesloten.")
         .setColor("#fa9600")
-        .setFooter("©️Nintendo's Mansion")
+        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
         .setTimestamp();
 
     // Vind kanaal voor de logs.

@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Je bent gejoint op:". target.joinedAt)
         .setColor("#fa9600")
         .setTimestamp()
-        .setFooter("©️Nintendo's Mansion")
+        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa");
 
         message.channel.send(userinf);
 }

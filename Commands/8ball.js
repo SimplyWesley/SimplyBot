@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle(`**Het antwoord van 8ball is:**\n`)
     .setDescription(fortunes[Math.floor(Math.random() * fortunes.length)])
     .setColor("#56f442")
-    .setFooter("©️Nintedo's Mansion")
+    .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
     .setTimestamp();
   if (args[0]) message.channel.send(embedParent1);
   else message.channel.send(":x: " + "| Sorry ik kan geen antwoord geven op deze vraag");

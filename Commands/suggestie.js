@@ -13,7 +13,7 @@ module.exports.run = async(bot, message, args) => {
             .addField("Status", "Stem ronde")
             .setTimestamp()
             .setColor("#fa9600")
-            .setFooter(`Id: ${msg.id}`);
+            .setFooter(`Id: ${msg.id}`, "https://bit.ly/2uYYSGa");
 
         msg.edit(embed)
         message.member.send(embed)

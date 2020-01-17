@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     var embedParent1 = new discord.RichEmbed()
     .setTitle(`**Avatar van opgevraagde persoon:**`)
     .setImage(target.displayAvatarURL)
-    .setFooter("©️Nintendo's Mansion")
+    .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
     .setColor("#fa9600")
     .setTimestamp()
     await message.channel.send(embedParent1);

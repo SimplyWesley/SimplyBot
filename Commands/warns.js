@@ -28,7 +28,7 @@ module.exports.run = async(bot, message, args) => {
         .setColor("#fa9600")
         .setDescription("In dit menu kan je zien hoeveel warns iemand heeft")
         .addField("Deze gebruiker heeft: ", `${warnamount} waarschuwing(en)`)
-        .setFooter("©️Nintendo's Mansion")
+        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
         .setTimestamp();
 
         message.channel.send(warnamountEmbed);
