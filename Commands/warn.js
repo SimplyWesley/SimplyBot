@@ -40,7 +40,7 @@ module.exports.run = async(bot, message, args) => {
         .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
         .setTimestamp();
 
-    var warnChannel = message.guild.channels.find(`name`, "logs");
+    var warnChannel = message.guild.channels.find(c => c.name == "logs");
     if (!warnChannel) return message.channel.send("Kan het kanaal niet vinden");
 
     warnChannel.send(warnEmbed);
