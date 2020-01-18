@@ -6,8 +6,6 @@ module.exports.run = async (bot, message, args) => {
 
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Jij kan dit niet doen");
 
-    message.delete();
-
     var splitser = "//";
 
     if(args[0] == null){
@@ -22,6 +20,8 @@ module.exports.run = async (bot, message, args) => {
             return message.channel.send(useMessage)
 
     }
+
+    message.delete();
 
     args = args.join(" ").split(splitser);
 
