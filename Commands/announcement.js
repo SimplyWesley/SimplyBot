@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
 
     args = args.join(" ").split(splitser);
 
-    if(args[5] == undefined) args[5] = "ideas";
+    if(args[2] == undefined) args[2] = "ideas";
 
     var options = {
 

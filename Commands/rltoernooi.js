@@ -15,8 +15,8 @@ module.exports.run = async (bot, message, args) => {
         var useMessage = new discord.RichEmbed()
             .setTitle("Hoe te gebruiken:")
             .setColor("#fa9600")
-            .setDescription(`Maak een announcement door gebruik te maken van: \n!announcement <Titel> ${splitser} <Bericht> ${splitser} <Algemene informatie> ${splitser} <Toernooi informatie> ${splitser} <Extra informatie> ${splitser} <Kanaal>`)
-            .setFooter("©️Nintendo's Mansion")
+            .setDescription(`Maak een Rocket League toernooi door gebruik te maken van: \n!rltoernooi <Titel> ${splitser} <Bericht> ${splitser} <Algemene informatie> ${splitser} <Toernooi informatie> ${splitser} <Extra informatie> ${splitser} <Kanaal>`)
+            .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
             .setTimestamp();
 
             return message.channel.send(useMessage)
@@ -49,7 +49,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Extra informatie:", options.extra)
         .setColor("#fa9600")
         .setImage("https://bit.ly/30trQcZ")
-        .setFooter(`©️Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
+        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
         .setTimestamp();
 
     var announcementChannel = message.guild.channels.find(c => c.name == options.kanaal);
