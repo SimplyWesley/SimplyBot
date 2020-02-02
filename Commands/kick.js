@@ -10,23 +10,23 @@ module.exports.run = async (bot, message, arguments) => {
 
     if(!arguments) return message.channel.send("Gelieve een reden mee te geven")
 
-    // 0x00000002 = KICK_USERS
-    // 0x00002000 = MANNAGE_MESSAGES
+    // 0x00000002 = KICK_MEMBERS
+
     if (!message.member.hasPermission(0x00000002)) return message.channel.send("Jij kan dit niet doen");
 
-    if (kickUser.hasPermission(0x00002000)) return message.channel.send("Je kan deze gebruiker niet kicken");
+    if (kickUser.hasPermission(0x00000002)) return message.channel.send("Je kan deze gebruiker niet kicken");
 
     var kickEmbed = new discord.RichEmbed()
         .setDescription("**Kick**")
         .setColor("#fa9600")
         .addField("Gekickt door: ", message.author)
-        .addField("Gekickte gebruiker: ", kickUser)
+        .addField("Gekickte gebruiker ", kickUser)
         .addField("Reden: ", reason)
-        .setFooter(`©️ Nintedo's Mansion`, "https://bit.ly/2uYYSGa")
+        .setFooter(`©️ Nintendo's Mansion`, "https://bit.ly/2uYYSGa")
         .setTimestamp();
 
-        var kickChannel = message.guild.channels.find(c => c.name == "logs");
-        if (!kickChannel) return message.channel.send("Kan geen log kanaal vinden");
+    var kickChannel = message.guild.channels.find(c => c.name == "logs");
+    if (!kickChannel) return message.channel.send("Kan geen log kanaal vinden");
 
     message.guild.member(kickUser).kick(reason);
 
